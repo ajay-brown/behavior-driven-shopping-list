@@ -1,8 +1,8 @@
-var expect =
-  typeof require === "undefined" ? chai.expect : require("chai").expect;
-var sinon = require("sinon");
-var sinonChai = require("sinon-chai");
-chai.use(sinonChai);
+// var expect =
+//   typeof require === "undefined" ? chai.expect : require("chai").expect;
+// var sinon = require("sinon");
+// var sinonChai = require("sinon-chai");
+// chai.use(sinonChai);
 
 describe("ShoppingListItem", function() {
   it("Create a class called ShoppingListItem", function() {
