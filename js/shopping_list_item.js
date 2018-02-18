@@ -2,16 +2,16 @@ class ShoppingListItem {
   constructor(name, description, is_done) {
     this.name = name;
     this.description = description;
-    this.is_done = false;
+    this.is_done = is_done;
   }
   check() {
-    this.is_done = true;
+    let is_done = true;
   }
   uncheck() {
-    this.is_done = false;
+    let is_done = false;
   }
-  render() {
-    let display = getElementById("mocha");
+  render(is_done) {
+    const display = document.createElement("div");
     let completed = document.createElement("li");
     completed.className = "completed_" + is_done;
     display.innerHTML = completed;

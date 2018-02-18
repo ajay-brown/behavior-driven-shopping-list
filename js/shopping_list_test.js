@@ -2,9 +2,13 @@ const expect = chai.expect;
 chai.should();
 
 describe("ShoppingListItem", function() {
+  beforeEach(function() {
+    newShoppingListItem = new ShoppingListItem();
+  });
   it("Create a class called ShoppingListItem", function() {
     expect(new ShoppingListItem()).to.be.an.instanceof(ShoppingListItem);
   });
+
   it("ShoppingListItem has a property 'name' ", function() {
     expect(new ShoppingListItem()).to.have.property("name");
   });
@@ -21,26 +25,30 @@ describe("ShoppingListItem", function() {
     expect(description).to.be.a("string");
   });
   it("ShoppingListItem has method named 'check', calling the instance's 'check' method will set 'is_done' property to true", function() {
-    expect(ShoppingListItem).to.respondTo("check");
-    var spy = sinon.spy(ShoppingListItem, "check");
-    expect(spy).to.respondTo("is_done");
-    expect(is_done).to.be(true);
+    expect(new ShoppingListItem()).to.respondTo("check");
+    var spy = sinon.spy(newShoppingListItem, "check");
+    spy();
+    expect(spy).to.be.calledOn(sinon.match());
+    //
   });
   it("ShoppingListItem has method named 'uncheck', calling the instance's 'uncheck' method will set is_done property to false ", function() {
-    expect(ShoppingListItem).to.respondTo("uncheck");
-    var spy = sinon.spy(ShoppingListItem, "uncheck");
-    expect(spy).to.respondTo("is_done");
-    expect(is_done).to.be(false);
+    expect(new ShoppingListItem()).to.respondTo("uncheck");
+    var spy = sinon.spy(newShoppingListItem, "uncheck");
+    spy();
+    expect(spy).to.be.calledOn(sinon.match());
   });
   it("ShoppingListItem has method named 'render', calling the instance's 'render' method will construct and return an html formatted string, the string will be wrapped in li tags", function() {
-    expect(ShoppingListItem).to.respondTo("render");
-    var spy = sinon.spy(ShoppingListItem, "render");
-    expect(spy).to.have.property("li");
-    expect(spy).to.have.string(``);
+    expect(new ShoppingListItem()).to.respondTo("render");
+    var spy = sinon.spy(newShoppingListItem, "render");
+    newShoppingListItem.render();
+    expect(spy).calledWith();
   });
 });
 
 describe("ShoppingList", function() {
+  beforeEach(function() {
+    newShoppingList = new ShoppingList();
+  });
   it("ShoppingList is a class", function() {
     expect(new ShoppingList()).to.be.an.instanceof(ShoppingList);
   });
@@ -54,8 +62,10 @@ describe("ShoppingList", function() {
     expect(new ShoppingList()).to.respondTo("addItem");
   });
   it("Invoking the 'addItem' method by passing in a ShoppingListItem object should add that object to the 'items' array.", function() {
-    var spy = sinon.spy(ShoppingList, "addItem");
-    expect(spy).to.have.been.calledWith("ShoppingListItem");
+    var newShoppingListItem = "avocado";
+    newShoppingList.addItem(newShoppingListItem);
+    var spy = sinon.spy(new ShoppingList(), "addItem");
+    expect(spy).to.have.been.calledWith("newShoppingListItem");
     expect([]).to.have.lengthOf(1);
   });
   it(" Invoking the 'addItem' method by passing in anything else that is not a ShoppingListItem object should throw an error", function() {
