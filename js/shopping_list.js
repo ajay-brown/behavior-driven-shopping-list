@@ -25,11 +25,12 @@ class ShoppingList {
     }
   }
   render() {
-      const itemList;
+    const itemList = [];
     for (var i = 0; i < this.items.length; i++) {
-     let item= this.items[i].render;
+      let item = this.items[i].render;
       itemList.push(item);
-      return `<ul>${itemList}</ul>`
+      return `<ul>${itemList}</ul>`;
     }
   }
 }
+module.exports = ShoppingList;

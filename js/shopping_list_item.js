@@ -16,3 +16,4 @@ class ShoppingListItem {
     } </span><span>${this.description}</span></li>`;
   }
 }
+module.exports = ShoppingListItem;
