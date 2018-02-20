@@ -6,6 +6,15 @@
 
 <body>
     <div id="content">
+        <form action+ "" method="get">
+            <label for="GET-name">Name:</label>
+            <input id="Get-name" type="text" name="name">
+            <input type="submit" value="Save">
+            <label for="GET-description">Description:</label>
+            <input id="GET-description" type="text" name="description">
+            <input type="submit" value="Save">
+            <button id="add_shopping_list_item_button" onclick="add_to_shopping_list()">Add to Shopping List</button>
+        </form>
         <script src="./js/shopping_list_item.js"></script>
         <script src="./js/shopping_list.js"></script>
         <script src="./js/shopping_list_test.js"></script>
