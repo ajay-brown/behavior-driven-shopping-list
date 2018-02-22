@@ -1,4 +1,4 @@
-class ShoppingList {
+var ShoppingList = class ShoppingList {
   constructor() {
     this.items = [];
   }
@@ -27,10 +27,10 @@ class ShoppingList {
   render() {
     const itemList = [];
     for (var i = 0; i < this.items.length; i++) {
-      let item = this.items[i].render;
+      let item = this.items[i];
+      console.log(item);
       itemList.push(item);
-      return `<ul>${itemList}</ul>`;
+      document.getElementById("list").innerHTML = `<ul>${itemList}</ul>`;
     }
   }
-}
-module.exports = ShoppingList;
+};

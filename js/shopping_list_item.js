@@ -2,7 +2,7 @@ class ShoppingListItem {
   constructor(name, description) {
     this.name = name;
     this.description = description;
-    this.is_done = is_done;
+    this.is_done = false;
   }
   check() {
     let is_done = true;
@@ -16,4 +16,3 @@ class ShoppingListItem {
     } </span><span>${this.description}</span></li>`;
   }
 }
-module.exports = ShoppingListItem;
