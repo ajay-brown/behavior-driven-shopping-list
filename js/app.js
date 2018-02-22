@@ -11,5 +11,20 @@ function add_to_shopping_list(name, description) {
   let listItemSpace = document.createElement("p");
   listItemSpace.innerHTML = newShoppingListItem.render();
   list.appendChild(listItemSpace);
-  console.log("hi");
+}
+function changedCheckedStatus(idx, checkbox) {
+  newShoppingList.forEach(newShoppingListItem => {
+    if (newShoppingListItem === idx && checkbox.checked === false) {
+      if (newShoppingListItem.is_done === false) {
+        console.log("done!");
+        check();
+      } else if (
+        newShoppingListItem.is_done === true &&
+        checkbox.checked === true
+      ) {
+        console.log("undone!");
+        uncheck();
+      }
+    }
+  });
 }

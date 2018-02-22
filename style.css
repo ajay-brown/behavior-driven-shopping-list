@@ -1,0 +1,52 @@
+html {
+  font-family: "Bellefair", serif;
+}
+.checkbox {
+  display: inline-block;
+}
+
+#container {
+  display: inline-flex;
+  flex-direction: row;
+}
+p {
+}
+.removeButton {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  color: #000000;
+  font-size: 10px;
+  background: #ffffff;
+  padding: 5px 5px 5px 5px;
+  font-family: "Bellefair", serif;
+}
+.removeButton:hover {
+  background: #ffffff;
+  background-image: -webkit-linear-gradient(top, #ffffff, #fa9c0f);
+  background-image: -moz-linear-gradient(top, #ffffff, #fa9c0f);
+  background-image: -ms-linear-gradient(top, #ffffff, #fa9c0f);
+  background-image: -o-linear-gradient(top, #ffffff, #fa9c0f);
+  background-image: linear-gradient(to bottom, #ffffff, #fa9c0f);
+  text-decoration: none;
+}
+#add_shopping_list_item_button {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  color: #000000;
+  font-size: 15px;
+  background: #ffffff;
+  padding: 5px 5px 5px 5px;
+  font-family: "Bellefair", serif;
+}
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background: #fa9c0f;
+}
+
+input[type="text"] {
+  border: 10px black;
+}
